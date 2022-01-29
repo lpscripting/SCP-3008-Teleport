@@ -1,0 +1,70 @@
+local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/azure", true))()
+
+local AimbotTab = Library:CreateTab("Tween Teleport", ":)")
+
+AimbotTab:CreateButton(
+    "Corner 1",
+    function()
+        local New_CFrame = CFrame.new(3, 5, 3)
+        local ts = game:GetService('TweenService')
+        local char = game.Players.LocalPlayer.Character
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        ts:Create(part, ti, tp):Play()
+    end
+)
+
+AimbotTab:CreateButton(
+    "Corner 2",
+    function()
+        local New_CFrame = CFrame.new(2548, 13, 2547)
+        local ts = game:GetService('TweenService')
+        local char = game.Players.LocalPlayer.Character
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        ts:Create(part, ti, tp):Play()
+    end
+)
+
+AimbotTab:CreateButton(
+    "Corner 3",
+    function()
+        local New_CFrame = CFrame.new(1, 4, 2548)
+        local ts = game:GetService('TweenService')
+        local char = game.Players.LocalPlayer.Character
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        ts:Create(part, ti, tp):Play()
+    end
+)
+
+AimbotTab:CreateButton(
+    "Corner 4",
+    function()
+        local New_CFrame = CFrame.new(2549, 4, 4)
+        local ts = game:GetService('TweenService')
+        local char = game.Players.LocalPlayer.Character
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        ts:Create(part, ti, tp):Play()
+    end
+)
+
+local Teleport = Library:CreateTab("Pillar House Base", "Sometimes doesn't spawn on server")
+Teleport:CreateButton(
+    "House Sky Base",
+    function()
+        local New_CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar.HouseBase.CFrame
+        local ts = game:GetService('TweenService')
+        local char = game.Players.LocalPlayer.Character
+        local part = char.HumanoidRootPart
+        local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+        local tp = {CFrame = New_CFrame}
+        ts:Create(part, ti, tp):Play()
+    end
+)
+

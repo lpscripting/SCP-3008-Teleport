@@ -22,6 +22,8 @@ game.StarterGui:SetCore("SendNotification", {
 
 wait(1)
 
+loadstring(game:HttpGet('https://raw.githubusercontent.com/EdgeIY/infiniteyield/master/source'))()
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/azure", true))()
 
 local AimbotTab = Library:CreateTab("Render", ":)")
@@ -55,7 +57,7 @@ end
 )
 
 
-local Teleport = Library:CreateTab("Render Sky Base", "Important!")
+local Teleport = Library:CreateTab("Render Sky Base", "Important: If it does not work it means the house is locked on this server")
 
 Teleport:CreateButton(
 "Render Upper Part",
@@ -99,7 +101,7 @@ end
 Teleport:CreateButton(
 "Render Sky Base",
 function()
-   local parts = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar:GetChildren(Part)
+   local parts = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar:GetChildren()
 
    for i,v in pairs(parts) do
       local A1 = parts[i]
@@ -109,5 +111,56 @@ function()
          wait()
       end
    end
+end
+)
+
+local Places = Library:CreateTab("Places", "Medkit and food. Pretty shit tho")
+
+Places:CreateButton(
+"Medkits",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.Medkits.Middle.CFrame
+end
+)
+
+Places:CreateButton(
+"Snack Shop",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground["Snack Shop"].Middle.CFrame
+end
+)
+
+Places:CreateButton(
+"Living Room GameCube",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground["Living Room (GameCube)"].crn
+end
+)
+
+Places:CreateButton(
+"Cafe1",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.cafe1.Ground
+end
+)
+
+Places:CreateButton(
+"Cafe2",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.cafe2.Ground
+end
+)
+
+Places:CreateButton(
+"Cafe3",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.cafe3.Ground
+end
+)
+
+Places:CreateButton(
+"Cafe4",
+function()
+    game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.cafe4.Ground
 end
 )

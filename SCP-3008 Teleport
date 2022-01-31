@@ -1,70 +1,113 @@
+game.StarterGui:SetCore("SendNotification", {
+   Title = "Remember!";
+   Text = "Before teleporting turn on swim!";
+   Icon = "rbxthumb://type=Asset&id=4613613362&w=150&h=150";
+   Duration = 5;
+   Callback = bindableFunction;
+   Button1 = "Ja!";
+   Button2 = "Nein!";
+})
+
+wait(0.5)
+
+game.StarterGui:SetCore("SendNotification", {
+   Title = "Go to Render First!";
+   Text = "To spawn The Sky base!";
+   Icon = "rbxthumb://type=Asset&id=4613613362&w=150&h=150";
+   Duration = 5;
+   Callback = bindableFunction;
+   Button1 = "Ja!";
+   Button2 = "Nein!";
+})
+
+wait(1)
+
 local Library = loadstring(game:HttpGet("https://raw.githubusercontent.com/bloodball/-back-ups-for-libs/main/azure", true))()
 
-local AimbotTab = Library:CreateTab("Tween Teleport", ":)")
+local AimbotTab = Library:CreateTab("Render", ":)")
 
 AimbotTab:CreateButton(
-    "Corner 1",
-    function()
-        local New_CFrame = CFrame.new(3, 5, 3)
-        local ts = game:GetService('TweenService')
-        local char = game.Players.LocalPlayer.Character
-        local part = char.HumanoidRootPart
-        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        ts:Create(part, ti, tp):Play()
-    end
+"Render Lower Part",
+function()
+   local TS = game:GetService("TweenService")
+   local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(3, 5, 3)})
+   local tween1 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(2548, 4, 2547)})
+   local tween2 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(1, 4, 2548)})
+   local tween3 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(2549, 4, 4)})
+   tween:play()
+   wait(1)
+   tween1:play()
+   wait(1)
+   tween2:play()
+   wait(1)
+   tween3:play()
+   wait(1)
+   tween1:play()
+   wait(1)
+   tween2:play()
+   wait(1)
+   tween:play()
+   wait(1)
+   tween3:play()
+   wait(1)
+   tween1:play()
+end
 )
 
-AimbotTab:CreateButton(
-    "Corner 2",
-    function()
-        local New_CFrame = CFrame.new(2548, 13, 2547)
-        local ts = game:GetService('TweenService')
-        local char = game.Players.LocalPlayer.Character
-        local part = char.HumanoidRootPart
-        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        ts:Create(part, ti, tp):Play()
-    end
-)
 
-AimbotTab:CreateButton(
-    "Corner 3",
-    function()
-        local New_CFrame = CFrame.new(1, 4, 2548)
-        local ts = game:GetService('TweenService')
-        local char = game.Players.LocalPlayer.Character
-        local part = char.HumanoidRootPart
-        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        ts:Create(part, ti, tp):Play()
-    end
-)
+local Teleport = Library:CreateTab("Render Sky Base", "Important!")
 
-AimbotTab:CreateButton(
-    "Corner 4",
-    function()
-        local New_CFrame = CFrame.new(2549, 4, 4)
-        local ts = game:GetService('TweenService')
-        local char = game.Players.LocalPlayer.Character
-        local part = char.HumanoidRootPart
-        local ti = TweenInfo.new(3, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        ts:Create(part, ti, tp):Play()
-    end
-)
-
-local Teleport = Library:CreateTab("Pillar House Base", "Sometimes doesn't spawn on server")
 Teleport:CreateButton(
-    "House Sky Base",
-    function()
-        local New_CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar.HouseBase.CFrame
-        local ts = game:GetService('TweenService')
-        local char = game.Players.LocalPlayer.Character
-        local part = char.HumanoidRootPart
-        local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
-        local tp = {CFrame = New_CFrame}
-        ts:Create(part, ti, tp):Play()
-    end
+"Render Upper Part",
+function()
+   local TS = game:GetService("TweenService")
+   local tween = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(2549, 2025, 4)})
+   local tween1 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(1, 2025, 2548)})
+   local tween2 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(2548, 2025, 2547)})
+   local tween3 = TS:Create(game.Players.LocalPlayer.Character.HumanoidRootPart, TweenInfo.new(1), {CFrame = CFrame.new(3, 2025, 3)})
+   tween:play()
+   wait(5)
+   tween1:play()
+   wait(1)
+   tween2:play()
+   wait(1)
+   tween3:play()
+   wait(1)
+   tween1:play()
+   wait(1)
+   tween2:play()
+   wait(1)
+   tween:play()
+   wait(1)
+   tween3:play()
+end
 )
 
+Teleport:CreateButton(
+"House Sky Base",
+function()
+   local New_CFrame = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar.HouseBase.CFrame
+   local ts = game:GetService('TweenService')
+   local char = game.Players.LocalPlayer.Character
+   local part = char.HumanoidRootPart
+   local ti = TweenInfo.new(1, Enum.EasingStyle.Linear)
+   local tp = {CFrame = New_CFrame}
+   ts:Create(part, ti, tp):Play()
+end
+)
+
+Teleport:CreateButton(
+"Render Sky Base",
+function()
+   local parts = game:GetService("Workspace").GameObjects.Physical.Map.Ground.HousePillar:GetChildren(Part)
+
+   for i,v in pairs(parts) do
+      local A1 = parts[i]
+      if i > 2 then
+         print(A1.CFrame)
+         game.Players.LocalPlayer.Character.HumanoidRootPart.CFrame = A1.CFrame
+         wait()
+      end
+   end
+end
+)
